@@ -9,7 +9,7 @@ class SwiperWidget extends Widget
 {
     protected static ?int $sort = -5;
 
-    protected static string $view = 'filament-swiper::widgets.swiper-widget';
+    protected string $view = 'filament-swiper::widgets.swiper-widget';
 
     protected int | string | array $columnSpan = 'full';
 

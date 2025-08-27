@@ -2,14 +2,14 @@
 
 namespace Rupadana\FilamentSwiper\Infolists\Components;
 
+use Filament\Schemas\Components\Component;
+use Filament\Schemas\Components\Concerns\CanBeCollapsed;
+use Filament\Schemas\Components\Concerns\CanBeCompact;
+use Filament\Schemas\Components\Concerns\EntanglesStateWithSingularRelationship;
+use Filament\Schemas\Components\Concerns\HasDescription;
+use Filament\Schemas\Components\Concerns\HasHeading;
 use Closure;
-use Filament\Infolists\Components\Component;
-use Filament\Infolists\Components\Concerns\CanBeCollapsed;
-use Filament\Infolists\Components\Concerns\CanBeCompacted;
-use Filament\Infolists\Components\Concerns\EntanglesStateWithSingularRelationship;
-use Filament\Support\Concerns\HasDescription;
 use Filament\Support\Concerns\HasExtraAlpineAttributes;
-use Filament\Support\Concerns\HasHeading;
 use Filament\Support\Concerns\HasIcon;
 use Filament\Support\Concerns\HasIconColor;
 use Illuminate\Contracts\Support\Htmlable;
@@ -18,7 +18,7 @@ use Illuminate\Support\Str;
 class Section extends Component
 {
     use CanBeCollapsed;
-    use CanBeCompacted;
+    use CanBeCompact;
     use EntanglesStateWithSingularRelationship;
     use HasDescription;
     use HasExtraAlpineAttributes;
@@ -29,14 +29,14 @@ class Section extends Component
     /**
      * @var view-string
      */
-    protected string $view = 'filament-infolists::components.section';
+    protected string $view = 'filament-schemas::components.section';
 
     protected bool | Closure | null $isAside = null;
 
     protected bool | Closure $isContentBefore = false;
 
     /**
-     * @param  string | array<Component> | Htmlable | Closure | null  $heading
+     * @param string|array<Component>|Htmlable|Closure|null $heading
      */
     final public function __construct(string | array | Htmlable | Closure | null $heading = null)
     {
@@ -46,7 +46,7 @@ class Section extends Component
     }
 
     /**
-     * @param  string | array<Component> | Htmlable | Closure | null  $heading
+     * @param string|array<Component>|Htmlable|Closure|null $heading
      */
     public static function make(string | array | Htmlable | Closure | null $heading = null): static
     {
